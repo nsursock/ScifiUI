@@ -230,7 +230,6 @@
     color: var(--scifi-muted);
     margin-top: 0.15rem;
   }
-}
 
   .picker-card {
     display: flex;
@@ -265,3 +264,4 @@
     font-size: 0.62rem;
     color: var(--scifi-muted);
   }
+}
