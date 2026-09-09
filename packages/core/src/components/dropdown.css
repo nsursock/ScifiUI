@@ -93,4 +93,32 @@
     text-transform: uppercase;
     color: var(--scifi-muted);
   }
+
+  .context-menu {
+    position: fixed;
+    z-index: 210;
+    min-width: 11rem;
+    padding: 0.35rem;
+    border-radius: var(--scifi-radius-lg);
+    border: 1px solid var(--scifi-border-accent);
+    background: linear-gradient(
+      165deg,
+      rgba(var(--scifi-surface-1-rgb), 0.96),
+      rgba(var(--scifi-surface-2-rgb), 0.98)
+    );
+    box-shadow:
+      0 12px 36px -10px rgba(var(--scifi-shadow-rgb), 0.65),
+      0 0 0 1px rgba(var(--scifi-primary-rgb), 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .menu-item-danger {
+    color: var(--scifi-error);
+  }
+  .menu-item-danger:hover,
+  .menu-item-danger:focus-visible {
+    background: rgba(var(--scifi-error-rgb), 0.12);
+    color: var(--scifi-error);
+  }
 }
