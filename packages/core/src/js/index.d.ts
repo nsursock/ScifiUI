@@ -56,6 +56,11 @@ declare module "@scifiui/core/js" {
     onTick: (values: T) => void,
   ): unknown;
   export function pulseConsole(el: HTMLElement | null): Promise<void>;
+  /** Tunnel "dive" transition — scales content toward viewer + vignette close. Fires onComplete when done. */
+  export function diveTransition(
+    root: HTMLElement | null,
+    opts?: { target?: HTMLElement; onComplete?: () => void },
+  ): unknown;
   /** Re-export of the GSAP package for advanced consumers. */
   export const gsap: typeof import("gsap").default;
 }

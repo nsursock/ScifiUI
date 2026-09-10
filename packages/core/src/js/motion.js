@@ -131,4 +131,55 @@ export async function pulseConsole(el) {
   gsap.to(el, { scale: 1, duration: 0.18, ease: "power2.out" });
 }
 
+/**
+ * "Dive" tunnel transition — scales the landing content toward the viewer
+ * (origin pinned to `opts.target` or `.console-panel`) while a radial
+ * vignette closes in like tunnel walls. Calls `opts.onComplete` when finished
+ * so the caller can swap views. No-ops (and fires onComplete immediately)
+ * when perf-lite / reduced-motion.
+ */
+export function diveTransition(root, opts = {}) {
+  const onComplete = opts.onComplete || (() => {});
+  if (!root || motionDisabled()) {
+    onComplete();
+    return null;
+  }
+
+  const target = opts.target || root.querySelector(".console-panel") || root;
+
+  const overlay = document.createElement("div");
+  overlay.style.cssText =
+    "position:fixed;inset:0;z-index:9999;pointer-events:none;" +
+    "background:radial-gradient(circle at center,transparent 25%," +
+    "var(--scifi-bg,#06070d) 100%);opacity:0";
+  document.body.appendChild(overlay);
+
+  const rect = target.getBoundingClientRect();
+  const ox = ((rect.left + rect.width / 2) / window.innerWidth) * 100;
+  const oy = ((rect.top + rect.height / 2) / window.innerHeight) * 100;
+  gsap.set(root, { transformOrigin: `${ox}% ${oy}%` });
+
+  const tl = gsap.timeline({
+    onComplete: () => {
+      overlay.remove();
+      gsap.set(root, { clearProps: "transform,filter,opacity,transformOrigin" });
+      onComplete();
+    },
+  });
+
+  tl.to(root, {
+    scale: 3.2,
+    opacity: 0,
+    filter: "blur(10px)",
+    duration: 0.55,
+    ease: "power3.in",
+  }).to(
+    overlay,
+    { opacity: 1, duration: 0.4, ease: "power2.in" },
+    0.2,
+  );
+
+  return tl;
+}
+
 export { gsap };

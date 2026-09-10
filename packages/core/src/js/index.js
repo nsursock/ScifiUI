@@ -8,5 +8,6 @@ export {
   typewriter,
   countUp,
   pulseConsole,
+  diveTransition,
   gsap,
 } from "./motion.js";
