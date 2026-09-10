@@ -3,11 +3,12 @@ import "@fontsource/jetbrains-mono/500.css";
 import "@fontsource/jetbrains-mono/700.css";
 import "@fontsource/jetbrains-mono/800.css";
 import "@tabler/icons-webfont/dist/tabler-icons.min.css";
+import { enterShell } from "@scifiui/core/js";
 import "./styles.css";
 
 document.querySelector("#app").innerHTML = `
-  <div class="flex flex-col h-full">
-    <header class="app-bar shrink-0">
+  <div class="flex flex-col h-full" id="dash-root">
+    <header class="app-bar shrink-0" data-enter>
       <div class="flex items-center gap-3">
         <span class="brand-mark">ORBIT</span>
         <span class="badge badge-primary">ops</span>
@@ -26,7 +27,7 @@ document.querySelector("#app").innerHTML = `
     </header>
 
     <div class="flex flex-1 min-h-0">
-      <aside class="mode-rail shrink-0 hidden sm:flex">
+      <aside class="mode-rail shrink-0 hidden sm:flex" data-enter>
         <button class="icon-btn active" title="Overview"><i class="ti ti-home"></i></button>
         <button class="icon-btn" title="Fleet"><i class="ti ti-rocket"></i></button>
         <button class="icon-btn" title="Logs"><i class="ti ti-list"></i></button>
@@ -36,15 +37,15 @@ document.querySelector("#app").innerHTML = `
       <div class="flex-1 grid lg:grid-cols-[1fr_320px] gap-3 p-3 min-h-0 overflow-auto">
         <div class="flex flex-col gap-3 min-h-0">
           <div class="grid sm:grid-cols-3 gap-3">
-            <div class="metric-card">
+            <div class="metric-card" data-enter>
               <div class="card-head"><div class="card-label"><span class="label-bar"></span> Active ships</div></div>
               <div class="card-value">24</div>
             </div>
-            <div class="metric-card">
+            <div class="metric-card" data-enter>
               <div class="card-head"><div class="card-label"><span class="label-bar"></span> Fuel index</div></div>
               <div class="card-value">86%</div>
             </div>
-            <div class="metric-card">
+            <div class="metric-card" data-enter>
               <div class="card-head"><div class="card-label"><span class="label-bar"></span> Anomalies</div></div>
               <div class="card-value text-scifi-warning">3</div>
             </div>
@@ -98,3 +99,5 @@ document.querySelector("#app").innerHTML = `
 document.querySelector("#theme").addEventListener("change", (e) => {
   document.documentElement.setAttribute("data-theme", e.target.value);
 });
+
+enterShell(document.querySelector("#dash-root"));

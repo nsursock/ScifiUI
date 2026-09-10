@@ -37,3 +37,14 @@ Override any `--scifi-*` token:
 Or switch themes with `data-theme`: `retrowave` (default), `ghibli`, `fiesta`, `dawn`, `synthwave84`, `solarizedDark`, `cottonCandy`, `goldenTwilight`, `brightContrasts`.
 
 Stack Tailwind utilities freely: `class="btn btn-primary mt-4 opacity-80"`.
+
+## Motion (GSAP)
+
+Optional helpers from `@scifiui/core/js` (respects `perf-lite` and `prefers-reduced-motion`):
+
+```js
+import { enterShell, playLandingIntro, pulseConsole, gsap } from "@scifiui/core/js";
+
+enterShell(document.querySelector("#app")); // animates [data-enter]
+playLandingIntro(document.querySelector("#landing"));
+```

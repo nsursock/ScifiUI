@@ -19,7 +19,7 @@ packages/core/          # @scifiui/core — tokens, base, components, Tailwind p
   src/components.css    # aggregates component CSS
   src/index.css         # themes + base + components (consumer import)
   src/index.js          # Tailwind v4 @plugin entry (color utilities + thin addComponents)
-  src/js/               # initDropdowns, initTreeView, createToaster
+  src/js/               # initDropdowns, initTreeView, createToaster, GSAP motion (enterShell, …)
 apps/docs/              # Component gallery + theme switcher (port 5173)
 apps/templates/
   landing/              # Marketing / launcher (5180)

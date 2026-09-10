@@ -3,7 +3,7 @@ import "@fontsource/jetbrains-mono/500.css";
 import "@fontsource/jetbrains-mono/700.css";
 import "@fontsource/jetbrains-mono/800.css";
 import "@tabler/icons-webfont/dist/tabler-icons.min.css";
-import { initDropdowns, initTreeView, createToaster } from "@scifiui/core/js";
+import { initDropdowns, initTreeView, createToaster, enterShell } from "@scifiui/core/js";
 import "./styles.css";
 
 const THEMES = [
@@ -35,7 +35,7 @@ const TOKENS = [
 
 function section(title, body) {
   return `
-    <section class="mb-12">
+    <section class="mb-12" data-enter>
       <h2 class="pane-title mb-4"><span class="pane-title-bar"></span>${title}</h2>
       ${body}
     </section>`;
@@ -46,7 +46,7 @@ const app = document.querySelector("#app");
 app.innerHTML = `
   <div id="toasts" class="toast toast-top toast-end" aria-live="polite"></div>
 
-  <header class="app-bar sticky top-0">
+  <header class="app-bar sticky top-0" data-enter>
     <div class="flex items-center gap-3">
       <span class="brand-mark text-lg">ScifiUI</span>
       <span class="badge badge-primary">v0.1</span>
@@ -528,3 +528,4 @@ document.querySelector("#toast-info").addEventListener("click", () => toaster.in
 document.querySelector("#toast-ok").addEventListener("click", () => toaster.success("Payload saved."));
 
 refreshTokens();
+enterShell(app);

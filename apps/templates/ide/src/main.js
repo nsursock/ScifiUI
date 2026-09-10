@@ -3,7 +3,7 @@ import "@fontsource/jetbrains-mono/500.css";
 import "@fontsource/jetbrains-mono/700.css";
 import "@fontsource/jetbrains-mono/800.css";
 import "@tabler/icons-webfont/dist/tabler-icons.min.css";
-import { initDropdowns, initTreeView, createToaster } from "@scifiui/core/js";
+import { initDropdowns, initTreeView, createToaster, enterShell } from "@scifiui/core/js";
 import "./styles.css";
 
 const FILES = {
@@ -54,7 +54,7 @@ app.innerHTML = `
     </div>
 
     <div class="drawer-content flex flex-col h-full min-h-0">
-      <header class="app-bar shrink-0">
+      <header class="app-bar shrink-0" data-enter>
         <div class="flex items-center gap-3 min-w-0">
           <span class="brand-mark text-base">ScifiUI</span>
           <span class="badge badge-primary">demo</span>
@@ -80,14 +80,14 @@ app.innerHTML = `
       </header>
 
       <div class="flex flex-1 min-h-0">
-        <aside class="mode-rail shrink-0 hidden sm:flex">
+        <aside class="mode-rail shrink-0 hidden sm:flex" data-enter>
           <span class="tooltip tooltip-right" data-tip="Editor"><button type="button" class="icon-btn active" data-mode="editor">⌘</button></span>
           <span class="tooltip tooltip-right" data-tip="Agent"><button type="button" class="icon-btn" data-mode="agent">◈</button></span>
           <span class="tooltip tooltip-right" data-tip="Stats"><button type="button" class="icon-btn" data-mode="stats">▣</button></span>
         </aside>
 
         <div class="split split-row flex-1 min-h-0 p-2" id="main-split">
-          <div class="split-pane pane pane-bracketed" id="files-pane" style="flex: 0 0 220px">
+          <div class="split-pane pane pane-bracketed" id="files-pane" style="flex: 0 0 220px" data-enter>
             <div class="pane-header">
               <span class="pane-title"><span class="pane-title-bar"></span> Files</span>
               <span class="badge badge-success">tree</span>
@@ -129,7 +129,7 @@ app.innerHTML = `
 
           <button type="button" class="split-resizer" data-resize="files" aria-label="Resize files"></button>
 
-          <div class="split-pane pane pane-bracketed flex-1 min-w-0" id="editor-pane">
+          <div class="split-pane pane pane-bracketed flex-1 min-w-0" id="editor-pane" data-enter>
             <div class="tab-bar" id="tabs">
               <button type="button" class="tab active" data-file="app.ts">app.ts</button>
               <button type="button" class="tab" data-file="agent.ts">agent.ts</button>
@@ -149,7 +149,7 @@ app.innerHTML = `
 
           <button type="button" class="split-resizer" data-resize="chat" aria-label="Resize chat"></button>
 
-          <div class="split-pane pane pane-bracketed" id="chat-pane" style="flex: 0 0 300px">
+          <div class="split-pane pane pane-bracketed" id="chat-pane" style="flex: 0 0 300px" data-enter>
             <div class="pane-header">
               <span class="pane-title"><span class="pane-title-bar"></span> Agent</span>
               <span class="status-chip"><span class="dot"></span> ready</span>
@@ -342,3 +342,4 @@ document.querySelectorAll("[data-mode]").forEach((btn) => {
 });
 
 toaster.info("Interactive component demo ready");
+enterShell(app);

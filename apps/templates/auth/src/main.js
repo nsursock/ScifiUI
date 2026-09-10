@@ -1,10 +1,11 @@
 import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/700.css";
 import "@fontsource/jetbrains-mono/800.css";
+import { playLandingIntro, pulseConsole } from "@scifiui/core/js";
 import "./styles.css";
 
 document.querySelector("#app").innerHTML = `
-  <div class="relative min-h-screen flex items-center justify-center px-4 py-12">
+  <div class="relative min-h-screen flex items-center justify-center px-4 py-12" id="auth-root">
     <div class="grid-floor opacity-70"></div>
     <div class="vignette"></div>
 
@@ -15,7 +16,7 @@ document.querySelector("#app").innerHTML = `
         <p class="text-scifi-muted text-sm mt-2">Authenticate to access the orbital console.</p>
       </div>
 
-      <form class="console-panel p-6 md:p-8" id="auth-form">
+      <form class="console-panel p-6 md:p-8" id="auth-form" data-enter>
         <div class="scan-line"></div>
         <label class="block mb-4">
           <span class="label-kicker block mb-1.5">Callsign / email</span>
@@ -47,8 +48,12 @@ document.querySelector("#auth-form").addEventListener("submit", (e) => {
   const btn = e.target.querySelector('[type="submit"]');
   btn.textContent = "Linked ✓";
   btn.disabled = true;
+  void pulseConsole(document.querySelector("#auth-form"));
   setTimeout(() => {
     btn.textContent = "Authenticate";
     btn.disabled = false;
   }, 1600);
 });
+
+const authRoot = document.querySelector("#auth-root");
+if (authRoot instanceof HTMLElement) playLandingIntro(authRoot);

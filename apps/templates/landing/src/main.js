@@ -1,14 +1,15 @@
 import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/700.css";
 import "@fontsource/jetbrains-mono/800.css";
+import { playLandingIntro, pulseConsole } from "@scifiui/core/js";
 import "./styles.css";
 
 document.querySelector("#app").innerHTML = `
-  <div class="relative min-h-screen flex flex-col">
+  <div class="relative min-h-screen flex flex-col" id="landing-root">
     <div class="grid-floor"></div>
     <div class="vignette"></div>
 
-    <header class="relative z-10 app-bar">
+    <header class="relative z-10 app-bar" data-enter>
       <span class="brand-mark text-base">NEXUS</span>
       <nav class="hidden sm:flex items-center gap-1">
         <a class="nav-link active" href="#">Home</a>
@@ -53,13 +54,13 @@ document.querySelector("#app").innerHTML = `
       </section>
 
       <section id="console" class="w-full max-w-lg">
-        <div class="console-panel p-6 md:p-8 text-left">
+        <div class="console-panel p-6 md:p-8 text-left" id="console-panel">
           <div class="scan-line"></div>
           <p class="label-kicker mb-3">Workspace console</p>
           <h2 class="text-xl font-extrabold mb-2 tracking-tight">Open a channel</h2>
           <p class="text-sm text-scifi-muted mb-5">Drop a path or connect an existing orbital workspace.</p>
           <input class="input mb-3" placeholder="/missions/outer-rim" />
-          <button class="btn-cta w-full">Engage</button>
+          <button type="button" class="btn-cta w-full" id="engage">Engage</button>
         </div>
       </section>
     </main>
@@ -69,3 +70,10 @@ document.querySelector("#app").innerHTML = `
     </footer>
   </div>
 `;
+
+const root = document.querySelector("#landing-root");
+if (root instanceof HTMLElement) playLandingIntro(root);
+
+document.querySelector("#engage")?.addEventListener("click", () => {
+  void pulseConsole(document.querySelector("#console-panel"));
+});
