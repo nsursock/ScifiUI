@@ -9,6 +9,38 @@ declare module "@scifiui/core/js" {
     push: (msg: string, opts?: object) => HTMLElement;
   };
 
+  export interface CommandPaletteItem {
+    title: string;
+    command?: string;
+    hint?: string;
+    group?: string;
+    icon?: string;
+    shortcut?: string[];
+  }
+
+  export interface CommandPaletteHandle {
+    open: () => void;
+    close: () => void;
+    toggle: () => void;
+    refresh: () => void;
+    destroy: () => void;
+  }
+
+  export function initCommandPalette(
+    backdrop: HTMLElement,
+    opts?: { items?: CommandPaletteItem[]; onSelect?: (cmd: string, item?: CommandPaletteItem) => void; keys?: string[] },
+  ): CommandPaletteHandle;
+
+  export function createCommandPalette(
+    opts?: {
+      items?: CommandPaletteItem[];
+      onSelect?: (cmd: string, item?: CommandPaletteItem) => void;
+      keys?: string[];
+      placeholder?: string;
+      footer?: boolean;
+    },
+  ): CommandPaletteHandle;
+
   /** GSAP stagger for `[data-enter]` under root. No-ops when perf-lite / reduced-motion. */
   export function enterShell(root: HTMLElement): unknown;
   /** Landing / launcher intro for hero + console surfaces. */

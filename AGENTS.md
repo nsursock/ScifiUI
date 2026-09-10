@@ -15,7 +15,7 @@ packages/core/          # @scifiui/core — tokens, base, components, Tailwind p
   src/components/       # one CSS file per component family (@layer components)
                         # button, pane, input, badge, modal, nav, effects, tree, split,
                         # dropdown, tooltip, toast, loading, status, chat, drawer,
-                        # data, layout, media
+                        # command-palette, data, layout, media
   src/components.css    # aggregates component CSS
   src/index.css         # themes + base + components (consumer import)
   src/index.js          # Tailwind v4 @plugin entry (color utilities + thin addComponents)

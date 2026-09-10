@@ -96,12 +96,12 @@ Every color, glow, radius, and surface maps to a `--scifi-*` variable.
 - **Forms:** `input`, `textarea`, `select`, `checkbox`, `toggle`, `radio`, `range`, `file-input`, `pin-input`, `fieldset`, `label`
 - **Feedback:** `badge`, `alert`, `toast`, `loading`, `skeleton`, `progress`, `radial-progress`, `kbd`, `rating`, `indicator`
 - **Nav:** `app-bar`, `navbar`, `tab-bar`, `breadcrumbs`, `footer`, `pagination`, `steps`, `timeline`, `status-bar`
-- **Structure:** `tree-view`, `split`, `dropdown`, `menu`, `drawer`, `collapse`, `list`, `avatar`, `divider`
+- **Structure:** `tree-view`, `split`, `dropdown`, `menu`, `drawer`, `collapse`, `list`, `avatar`, `divider`, `command-palette`
 - **Chat / overlay / media:** `chat`, `modal`, `tooltip`, `popover`, `mask`, `carousel`, `diff`
 - **Effects:** `scan-line`, `grid-floor`, `vignette`, `hero-title`, `neon-flicker`, `link`, …
 
 ```js
-import { initDropdowns, initTreeView, createToaster } from "@scifiui/core/js";
+import { initDropdowns, initTreeView, createToaster, createCommandPalette } from "@scifiui/core/js";
 ```
 
 ## Icons

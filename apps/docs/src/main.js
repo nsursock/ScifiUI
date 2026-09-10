@@ -3,7 +3,7 @@ import "@fontsource/jetbrains-mono/500.css";
 import "@fontsource/jetbrains-mono/700.css";
 import "@fontsource/jetbrains-mono/800.css";
 import "@tabler/icons-webfont/dist/tabler-icons.min.css";
-import { initDropdowns, initTreeView, createToaster, enterShell } from "@scifiui/core/js";
+import { initDropdowns, initTreeView, createToaster, createCommandPalette, enterShell } from "@scifiui/core/js";
 import "./styles.css";
 
 const THEMES = [
@@ -330,6 +330,14 @@ app.innerHTML = `
     )}
 
     ${section(
+      "Command palette",
+      `<div class="flex flex-wrap items-center gap-3">
+        <button class="btn btn-primary" id="open-command-palette">Open command palette</button>
+        <span class="text-sm text-scifi-muted">or press <kbd class="kbd">⌘</kbd> <kbd class="kbd">K</kbd></span>
+      </div>`
+    )}
+
+    ${section(
       "Data display",
       `<div class="space-y-4 max-w-xl mb-6">
         <progress class="progress progress-primary" value="70" max="100"></progress>
@@ -526,6 +534,37 @@ initTreeView();
 const toaster = createToaster(document.querySelector("#toasts"));
 document.querySelector("#toast-info").addEventListener("click", () => toaster.info("Channel idle."));
 document.querySelector("#toast-ok").addEventListener("click", () => toaster.success("Payload saved."));
+
+const commandPalette = createCommandPalette({
+  keys: ["mod+k"],
+  items: [
+    { title: "Go to Overview", group: "Navigation", icon: "home", shortcut: ["G", "O"] },
+    { title: "Go to Telemetry", group: "Navigation", icon: "chart-bar", shortcut: ["G", "T"] },
+    { title: "Go to Logs", group: "Navigation", icon: "file-text", shortcut: ["G", "L"] },
+    { title: "Switch theme: Retrowave", group: "Actions", icon: "palette", command: "theme:retrowave" },
+    { title: "Switch theme: Synthwave '84", group: "Actions", icon: "palette", command: "theme:synthwave84" },
+    { title: "Toggle perf-lite", group: "Actions", icon: "bolt", command: "toggle-perf" },
+    { title: "Reload uplink", group: "Actions", icon: "refresh", shortcut: ["mod", "R"] },
+    { title: "Open settings", group: "Actions", icon: "settings", shortcut: ["mod", ","] },
+    { title: "Show shortcuts", group: "Help", icon: "keyboard", shortcut: ["?"] },
+    { title: "About ScifiUI", group: "Help", icon: "info-circle" },
+  ],
+  onSelect: (cmd) => {
+    if (cmd?.startsWith("theme:")) {
+      const theme = cmd.split(":")[1];
+      document.documentElement.setAttribute("data-theme", theme);
+      themeSelect.value = theme;
+      refreshTokens();
+      toaster.info(`Theme → ${theme}`);
+    } else if (cmd === "toggle-perf") {
+      document.documentElement.classList.toggle("perf-lite");
+      toaster.info("Perf-lite toggled");
+    } else {
+      toaster.info(`Run: ${cmd}`);
+    }
+  },
+});
+document.querySelector("#open-command-palette").addEventListener("click", () => commandPalette.open());
 
 refreshTokens();
 enterShell(app);
