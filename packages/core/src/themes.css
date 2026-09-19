@@ -47,6 +47,11 @@
   --scifi-radius-lg: 0.875rem;
   --scifi-radius-pill: 999px;
   --scifi-font: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /* Typographic roles — consumers may load webfonts; stacks are additive fallbacks */
+  --scifi-font-display: var(--scifi-font);
+  --scifi-font-body: var(--scifi-font);
+  --scifi-font-ar: "Noto Naskh Arabic", "Noto Sans Arabic", "Segoe UI", Tahoma, "Arabic Typesetting", sans-serif;
+  --scifi-font-he: "Noto Sans Hebrew", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
   --scifi-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -432,5 +437,54 @@
   --scifi-active-text: #2d3a2d;
   --scifi-shadow-rgb: 90, 100, 80;
   --scifi-backdrop-rgb: 70, 80, 60;
+}
+
+/* Seed Creative Hub — cultural / editorial: warm sand + gold, soft or no glow */
+:root[data-theme="seed-hub"],
+[data-theme="seed-hub"] {
+
+  --scifi-bg: #f3ebe0;
+  --scifi-surface: rgba(255, 250, 242, 0.82);
+  --scifi-surface-solid: #fffaf2;
+  --scifi-surface-hover: rgba(245, 236, 220, 0.9);
+  --scifi-surface-glass: linear-gradient(160deg, rgba(255, 250, 242, 0.9), rgba(240, 228, 208, 0.92));
+  --scifi-primary: #b8862d;
+  --scifi-secondary: #6b5a45;
+  --scifi-cyan: #8a9a6a;
+  --scifi-primary-glow: rgba(var(--scifi-primary-rgb), 0.12);
+  --scifi-cyan-glow: rgba(var(--scifi-cyan-rgb), 0.1);
+  --scifi-secondary-glow: rgba(var(--scifi-secondary-rgb), 0.1);
+  --scifi-text: #2c2419;
+  --scifi-muted: #8a7a66;
+  --scifi-success: #5a7a52;
+  --scifi-warning: #c4892a;
+  --scifi-error: #a8453a;
+  --scifi-border: rgba(var(--scifi-muted-rgb), 0.35);
+  --scifi-border-accent: rgba(var(--scifi-primary-rgb), 0.45);
+  --scifi-selection: rgba(var(--scifi-primary-rgb), 0.18);
+  /* Soft / no neon — editorial restraint */
+  --scifi-glow: none;
+  --scifi-glow-text: none;
+  --scifi-gradient-spectrum: linear-gradient(90deg, #d4a84b 0%, #b8862d 35%, #6b5a45 65%, #8a9a6a 100%);
+
+  --scifi-primary-rgb: 184, 134, 45;
+  --scifi-secondary-rgb: 107, 90, 69;
+  --scifi-cyan-rgb: 138, 154, 106;
+  --scifi-muted-rgb: 138, 122, 102;
+  --scifi-error-rgb: 168, 69, 58;
+  --scifi-success-rgb: 90, 122, 82;
+  --scifi-warning-rgb: 196, 137, 42;
+  --scifi-surface-1-rgb: 255, 250, 242;
+  --scifi-surface-2-rgb: 240, 228, 208;
+  --scifi-bg-deep-rgb: 243, 235, 224;
+  --scifi-active-text: #1f1912;
+  --scifi-shadow-rgb: 80, 60, 40;
+  --scifi-backdrop-rgb: 60, 45, 30;
+
+  --scifi-font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --scifi-font-body: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  --scifi-font: var(--scifi-font-body);
+  --scifi-font-ar: "Noto Naskh Arabic", "Noto Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --scifi-font-he: "Noto Sans Hebrew", "Segoe UI", Arial, sans-serif;
 }
 

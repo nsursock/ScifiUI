@@ -222,15 +222,15 @@
     border-radius: 0;
   }
   .join > :first-child {
-    border-top-left-radius: var(--scifi-radius);
-    border-bottom-left-radius: var(--scifi-radius);
+    border-start-start-radius: var(--scifi-radius);
+    border-end-start-radius: var(--scifi-radius);
   }
   .join > :last-child {
-    border-top-right-radius: var(--scifi-radius);
-    border-bottom-right-radius: var(--scifi-radius);
+    border-start-end-radius: var(--scifi-radius);
+    border-end-end-radius: var(--scifi-radius);
   }
   .join > :not(:first-child) {
-    margin-left: -1px;
+    margin-inline-start: -1px;
   }
   .join-vertical {
     flex-direction: column;
@@ -242,7 +242,7 @@
     border-radius: 0 0 var(--scifi-radius) var(--scifi-radius);
   }
   .join-vertical > :not(:first-child) {
-    margin-left: 0;
+    margin-inline-start: 0;
     margin-top: -1px;
   }
 

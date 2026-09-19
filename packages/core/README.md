@@ -34,7 +34,7 @@ Override any `--scifi-*` token:
 }
 ```
 
-Or switch themes with `data-theme`: `retrowave` (default), `ghibli`, `fiesta`, `dawn`, `synthwave84`, `solarizedDark`, `cottonCandy`, `goldenTwilight`, `brightContrasts`.
+Or switch themes with `data-theme`: `retrowave` (default), `ghibli`, `fiesta`, `dawn`, `synthwave84`, `solarizedDark`, `cottonCandy`, `goldenTwilight`, `brightContrasts`, `seed-hub`.
 
 Stack Tailwind utilities freely: `class="btn btn-primary mt-4 opacity-80"`.
 

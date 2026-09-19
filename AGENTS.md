@@ -4,7 +4,7 @@ Operating manual for coding agents working on ScifiUI. Prefer this file over gue
 
 ## Project overview
 
-ScifiUI is a **daisyUI / FlyonUI-style** CSS class kit: Tailwind CSS v4 plugin + `--scifi-*` design tokens + component classes. Visual DNA comes from AdaanIDE (glass, neon, JetBrains Mono, corner brackets, nine themes). It is **framework-agnostic** — markup is the consumer’s; classes are ours. Optional tiny vanilla JS helpers live under `@scifiui/core/js`. First reference consumer: sibling repo **CadanADE**.
+ScifiUI is a **daisyUI / FlyonUI-style** CSS class kit: Tailwind CSS v4 plugin + `--scifi-*` design tokens + component classes. Visual DNA comes from AdaanIDE (glass, neon, JetBrains Mono, corner brackets, nine Adaan themes + `seed-hub`). It is **framework-agnostic** — markup is the consumer’s; classes are ours. Optional tiny vanilla JS helpers live under `@scifiui/core/js`. First reference consumer: sibling repo **CadanADE**.
 
 ## Project structure
 
@@ -88,7 +88,7 @@ pnpm --filter @scifiui/template-ide build
 
 ## Design & promotion rules
 
-- Default theme is **retrowave**. Keep all nine Adaan-derived themes in sync when adding tokens (same variable names, different values).
+- Default theme is **retrowave**. Keep all nine Adaan-derived themes in sync when adding tokens (same variable names, different values). The additive `seed-hub` cultural theme may override fonts/glow independently.
 - Preserve signature motifs as optional classes: glass, brackets, scan-line, grid-floor, vignette, hero-title, neon-flicker, `perf-lite`.
 - Promote a pattern into `@scifiui/core` only when it is **general chrome / data display / input** any sci-fi app would reuse (tree, split, toast, dropdown, …). Keep product-specific widgets (editor hosts, agent tool cards, approval FSMs) in the consuming app.
 - v1 stays **class-based**, not a React/Svelte component npm API. Do not add a shadcn-style CLI/registry unless asked.

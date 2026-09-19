@@ -7,7 +7,7 @@
   .dropdown-menu {
     position: absolute;
     top: calc(100% + 0.35rem);
-    left: 0;
+    inset-inline-start: 0;
     z-index: 80;
     min-width: 10rem;
     padding: 0.35rem;
@@ -32,8 +32,8 @@
     gap: 0.1rem;
   }
   .dropdown-end > .dropdown-menu {
-    left: auto;
-    right: 0;
+    inset-inline-start: auto;
+    inset-inline-end: 0;
   }
 
   .menu {
@@ -57,7 +57,7 @@
     color: var(--scifi-text);
     font: inherit;
     font-size: 0.78125rem;
-    text-align: left;
+    text-align: start;
     cursor: pointer;
     text-decoration: none;
     transition: background 0.12s, color 0.12s;

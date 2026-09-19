@@ -30,8 +30,11 @@
       rgba(var(--scifi-surface-1-rgb), 0.95),
       rgba(var(--scifi-surface-2-rgb), 0.98)
     );
-    border-right: 1px solid var(--scifi-border);
+    border-inline-end: 1px solid var(--scifi-border);
     box-shadow: 8px 0 28px -16px rgba(var(--scifi-shadow-rgb), 0.55);
+  }
+  [dir="rtl"] .drawer-panel {
+    box-shadow: -8px 0 28px -16px rgba(var(--scifi-shadow-rgb), 0.55);
   }
 
   .drawer-content {
@@ -64,8 +67,12 @@
   }
   .drawer-end.open > .drawer-side .drawer-panel,
   .drawer-end > .drawer-side .drawer-panel {
-    border-right: none;
-    border-left: 1px solid var(--scifi-border);
+    border-inline-end: none;
+    border-inline-start: 1px solid var(--scifi-border);
     box-shadow: -8px 0 28px -16px rgba(var(--scifi-shadow-rgb), 0.55);
+  }
+  [dir="rtl"] .drawer-end.open > .drawer-side .drawer-panel,
+  [dir="rtl"] .drawer-end > .drawer-side .drawer-panel {
+    box-shadow: 8px 0 28px -16px rgba(var(--scifi-shadow-rgb), 0.55);
   }
 }

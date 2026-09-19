@@ -72,6 +72,10 @@ export default plugin(
         },
         fontFamily: {
           scifi: ["var(--scifi-font)"],
+          "scifi-display": ["var(--scifi-font-display)"],
+          "scifi-body": ["var(--scifi-font-body)"],
+          "scifi-ar": ["var(--scifi-font-ar)"],
+          "scifi-he": ["var(--scifi-font-he)"],
         },
         boxShadow: {
           "scifi-glow": "var(--scifi-glow)",

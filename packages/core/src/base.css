@@ -67,6 +67,19 @@
     text-transform: uppercase;
     color: var(--scifi-muted);
   }
+
+  .font-display {
+    font-family: var(--scifi-font-display);
+  }
+  .font-body {
+    font-family: var(--scifi-font-body);
+  }
+  .font-ar {
+    font-family: var(--scifi-font-ar);
+  }
+  .font-he {
+    font-family: var(--scifi-font-he);
+  }
 }
 
 /* Performance gating */
@@ -96,6 +109,12 @@ html.perf-lite .border-pulse,
 html.perf-lite .scan-line,
 html.perf-lite .status-chip .dot {
   animation: none;
+}
+html.perf-lite .modal-backdrop,
+html.perf-lite .modal,
+html.perf-lite .modal-backdrop.is-leaving,
+html.perf-lite .modal-backdrop.is-leaving .modal {
+  animation: none !important;
 }
 html.perf-lite .glow-accent,
 html.perf-lite .glow-cyan {

@@ -6,7 +6,7 @@
 
 **Adaan-styled sci-fi CSS class kit** for Tailwind CSS v4 — same model as daisyUI / FlyonUI: class-based, CSS-variable themed, framework-agnostic (React, Vue, Svelte, Alpine, Angular, or plain HTML).
 
-Glass panes · neon glows · corner brackets · JetBrains Mono · nine themes.
+Glass panes · neon glows · corner brackets · JetBrains Mono · nine Adaan themes + `seed-hub`.
 
 ## Features
 
@@ -83,7 +83,7 @@ Every color, glow, radius, and surface maps to a `--scifi-*` variable.
 
 **Themes** (set `data-theme` on `<html>`):
 
-`retrowave` · `ghibli` · `fiesta` · `dawn` · `synthwave84` · `solarizedDark` · `cottonCandy` · `goldenTwilight` · `brightContrasts`
+`retrowave` · `ghibli` · `fiesta` · `dawn` · `synthwave84` · `solarizedDark` · `cottonCandy` · `goldenTwilight` · `brightContrasts` · `seed-hub`
 
 **Stack utilities:** `class="btn btn-primary mt-4 opacity-80"`
 
@@ -92,12 +92,13 @@ Every color, glow, radius, and surface maps to a `--scifi-*` variable.
 ## Component classes
 
 - **Actions:** `btn`, `btn-sm|xs`, `btn-primary|ghost|danger`, `btn-cta`, `icon-btn`, `fab`, `join`, `swap`
-- **Surfaces:** `pane`, `pane-bracketed`, `glass`, `metric-card`, `console-panel`, `card`, `stack`
+- **Surfaces:** `pane`, `pane-bracketed`, `glass`, `metric-card`, `console-panel`, `card`, `media-card`, `card-media`, `stack`, `empty`
 - **Forms:** `input`, `textarea`, `select`, `checkbox`, `toggle`, `radio`, `range`, `file-input`, `pin-input`, `fieldset`, `label`
-- **Feedback:** `badge`, `alert`, `toast`, `loading`, `skeleton`, `progress`, `radial-progress`, `kbd`, `rating`, `indicator`
+- **Feedback:** `badge`, `chip`, `chip-group`, `filter-bar`, `alert`, `toast`, `loading`, `skeleton`, `progress`, `radial-progress`, `kbd`, `rating`, `indicator`
 - **Nav:** `app-bar`, `navbar`, `tab-bar`, `breadcrumbs`, `footer`, `pagination`, `steps`, `timeline`, `status-bar`
 - **Structure:** `tree-view`, `split`, `dropdown`, `menu`, `drawer`, `collapse`, `list`, `avatar`, `divider`, `command-palette`
 - **Chat / overlay / media:** `chat`, `modal`, `tooltip`, `popover`, `mask`, `carousel`, `diff`
+- **Type:** `font-display`, `font-body`, `font-ar`, `font-he` (`--scifi-font-*` tokens)
 - **Effects:** `scan-line`, `grid-floor`, `vignette`, `hero-title`, `neon-flicker`, `link`, …
 
 ```js

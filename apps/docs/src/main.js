@@ -16,6 +16,7 @@ const THEMES = [
   ["cottonCandy", "Cotton Candy"],
   ["goldenTwilight", "Golden Twilight"],
   ["brightContrasts", "Bright Contrasts"],
+  ["seed-hub", "Seed Hub"],
 ];
 
 const TOKENS = [
@@ -75,7 +76,7 @@ app.innerHTML = `
         <div class="flex flex-wrap gap-2 mb-4">
           <span class="feature-pill">Glass panes</span>
           <span class="feature-pill">Corner brackets</span>
-          <span class="feature-pill">9 themes</span>
+          <span class="feature-pill">10 themes</span>
           <span class="feature-pill">Tailwind v4</span>
         </div>
         <pre class="glass rounded-lg p-3 text-xs overflow-x-auto text-scifi-muted"><code>@import "tailwindcss";
@@ -471,6 +472,74 @@ app.innerHTML = `
     )}
 
     ${section(
+      "Media card",
+      `<div class="grid sm:grid-cols-2 gap-4 max-w-2xl">
+        <a href="#" class="media-card">
+          <div class="card-media">
+            <div class="h-full w-full bg-gradient-to-br from-[rgba(var(--scifi-primary-rgb),0.45)] to-[rgba(var(--scifi-cyan-rgb),0.35)]"></div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title font-display">Harbor study</h3>
+            <p class="text-sm text-scifi-muted">Photography · Beirut</p>
+          </div>
+        </a>
+        <div class="media-card">
+          <div class="card-media" style="aspect-ratio: 16 / 9">
+            <div class="h-full w-full bg-gradient-to-tr from-[rgba(var(--scifi-secondary-rgb),0.5)] to-[rgba(var(--scifi-primary-rgb),0.25)]"></div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title font-display">Night reel</h3>
+            <p class="text-sm text-scifi-muted">Film · 2:14</p>
+            <div class="card-actions"><button type="button" class="btn btn-sm btn-primary">Open</button></div>
+          </div>
+        </div>
+      </div>`
+    )}
+
+    ${section(
+      "Chips / filter bar",
+      `<div class="filter-bar mb-4">
+        <input class="input input-sm" placeholder="Search…" aria-label="Search filters" />
+        <div class="chip-group" role="group" aria-label="Disciplines">
+          <button type="button" class="chip active" aria-pressed="true">All</button>
+          <button type="button" class="chip" aria-pressed="false">Photo</button>
+          <button type="button" class="chip" aria-pressed="false">Film</button>
+          <button type="button" class="chip" aria-pressed="false">Music</button>
+          <button type="button" class="chip" aria-pressed="false">Design</button>
+        </div>
+      </div>
+      <div class="chip-group">
+        <span class="chip">Beirut</span>
+        <span class="chip active">Open to collab</span>
+        <span class="chip">Hub Night</span>
+      </div>`
+    )}
+
+    ${section(
+      "Empty state",
+      `<div class="empty max-w-md mx-auto">
+        <p class="label-kicker">Nothing here yet</p>
+        <h3 class="empty-title">No works in this collection</h3>
+        <p>Publish a piece or switch filters to see what the scene is making.</p>
+        <div class="empty-actions">
+          <button type="button" class="btn btn-sm btn-primary">Create work</button>
+          <button type="button" class="btn btn-sm btn-ghost">Clear filters</button>
+        </div>
+      </div>`
+    )}
+
+    ${section(
+      "Typography roles",
+      `<div class="space-y-3 max-w-xl">
+        <p class="font-display text-2xl font-bold">Display — <code class="text-xs text-scifi-muted">.font-display</code> / <code class="text-xs">--scifi-font-display</code></p>
+        <p class="font-body text-sm">Body — <code class="text-xs text-scifi-muted">.font-body</code> / <code class="text-xs">--scifi-font-body</code></p>
+        <p class="font-ar text-lg" dir="rtl" lang="ar">العربية — <code class="text-xs text-scifi-muted" dir="ltr">.font-ar</code></p>
+        <p class="font-he text-lg" dir="rtl" lang="he">עברית — <code class="text-xs text-scifi-muted" dir="ltr">.font-he</code></p>
+        <p class="text-xs text-scifi-muted">Try the <strong>Seed Hub</strong> theme for warm sand/gold editorial type roles.</p>
+      </div>`
+    )}
+
+    ${section(
       "Effects",
       `<div class="flex flex-wrap gap-3 items-center">
         <span class="hero-title text-2xl font-extrabold">Spectrum</span>
@@ -543,6 +612,7 @@ const commandPalette = createCommandPalette({
     { title: "Go to Logs", group: "Navigation", icon: "file-text", shortcut: ["G", "L"] },
     { title: "Switch theme: Retrowave", group: "Actions", icon: "palette", command: "theme:retrowave" },
     { title: "Switch theme: Synthwave '84", group: "Actions", icon: "palette", command: "theme:synthwave84" },
+    { title: "Switch theme: Seed Hub", group: "Actions", icon: "palette", command: "theme:seed-hub" },
     { title: "Toggle perf-lite", group: "Actions", icon: "bolt", command: "toggle-perf" },
     { title: "Reload uplink", group: "Actions", icon: "refresh", shortcut: ["mod", "R"] },
     { title: "Open settings", group: "Actions", icon: "settings", shortcut: ["mod", ","] },
