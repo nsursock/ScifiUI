@@ -39,7 +39,7 @@ app.innerHTML = `
             <option value="retrowave">Retrowave</option>
             <option value="synthwave84">Synthwave '84</option>
             <option value="ghibli">Ghibli</option>
-            <option value="fiesta">Fiesta</option>
+            <option value="vibrantFiesta">Vibrant Fiesta</option>
             <option value="goldenTwilight">Golden Twilight</option>
             <option value="solarizedDark">Solarized Dark</option>
           </select>

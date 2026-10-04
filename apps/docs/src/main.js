@@ -9,7 +9,7 @@ import "./styles.css";
 const THEMES = [
   ["retrowave", "Retrowave"],
   ["ghibli", "Ghibli"],
-  ["fiesta", "Fiesta"],
+  ["vibrantFiesta", "Vibrant Fiesta"],
   ["dawn", "Dawn"],
   ["synthwave84", "Synthwave '84"],
   ["solarizedDark", "Solarized Dark"],

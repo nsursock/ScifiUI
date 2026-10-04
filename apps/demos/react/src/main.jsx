@@ -21,7 +21,7 @@ import "./styles.css";
 const THEMES = [
   "retrowave",
   "ghibli",
-  "fiesta",
+  "vibrantFiesta",
   "dawn",
   "synthwave84",
   "solarizedDark",

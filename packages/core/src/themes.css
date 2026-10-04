@@ -100,8 +100,8 @@
   --scifi-backdrop-rgb: 60, 50, 30;
 }
 
-:root[data-theme="fiesta"],
-[data-theme="fiesta"] {
+:root[data-theme="vibrantFiesta"],
+[data-theme="vibrantFiesta"] {
 
   --scifi-bg: #1a0b3d;
   --scifi-surface: rgba(45, 27, 85, 0.65);
@@ -439,6 +439,152 @@
   --scifi-backdrop-rgb: 70, 80, 60;
 }
 
+/* Cantina — pastel violet + apple green, moody lounge vibe */
+:root[data-theme="cantinaGirl"],
+[data-theme="cantinaGirl"] {
+
+  --scifi-bg: #1a1226;
+  --scifi-surface: rgba(var(--scifi-surface-1-rgb), 0.65);
+  --scifi-surface-solid: #241a3a;
+  --scifi-surface-hover: rgba(48, 36, 72, 0.75);
+  --scifi-surface-glass: linear-gradient(160deg, rgba(var(--scifi-surface-1-rgb), 0.8), rgba(var(--scifi-surface-2-rgb), 0.9));
+  /* Cantina: pastel violet + apple green on a deep violet-charcoal.
+     Moody lounge atmosphere — violet-led with crisp green accents.
+     Distinct from Retrowave's hot pink and Fiesta's indigo: softer violet base,
+     fresh apple green secondary, and a warm amber "cocktail" tertiary. */
+  --scifi-primary: #c8b6ff;
+  --scifi-secondary: #98d98e;
+  --scifi-cyan: #f4c542;
+  --scifi-primary-glow: rgba(var(--scifi-primary-rgb), 0.35);
+  --scifi-cyan-glow: rgba(var(--scifi-cyan-rgb), 0.35);
+  --scifi-secondary-glow: rgba(var(--scifi-secondary-rgb), 0.35);
+  --scifi-text: #e8e0f0;
+  --scifi-muted: #8a7aa8;
+  --scifi-success: #98d98e;
+  --scifi-warning: #f4c542;
+  --scifi-error: #ff8a8a;
+  --scifi-border: rgba(var(--scifi-muted-rgb), 0.35);
+  --scifi-border-accent: rgba(var(--scifi-primary-rgb), 0.4);
+  --scifi-selection: rgba(var(--scifi-primary-rgb), 0.25);
+  /* Moody lounge glows — intimate, not stadium */
+  --scifi-glow: 0 0 20px var(--scifi-primary-glow);
+  --scifi-glow-text: 0 0 8px var(--scifi-primary-glow);
+  /* Cantina spectrum: pastel violet → apple green → warm amber → deep violet → pastel violet */
+  --scifi-gradient-spectrum: linear-gradient(90deg, #c8b6ff 0%, #98d98e 25%, #f4c542 50%, #4a346b 75%, #c8b6ff 100%);
+
+  /* RGB channels for rgba() tints */
+  --scifi-primary-rgb: 200, 182, 255;
+  --scifi-secondary-rgb: 152, 217, 142;
+  --scifi-cyan-rgb: 244, 197, 66;
+  --scifi-muted-rgb: 138, 122, 168;
+  --scifi-error-rgb: 255, 138, 138;
+  --scifi-success-rgb: 152, 217, 142;
+  --scifi-warning-rgb: 244, 197, 66;
+  /* Semantic surface layers (rgb) — deep violet-charcoal */
+  --scifi-surface-1-rgb: 36, 26, 58;
+  --scifi-surface-2-rgb: 26, 18, 38;
+  --scifi-bg-deep-rgb: 26, 18, 38;
+  --scifi-active-text: #ffffff;
+  --scifi-shadow-rgb: 10, 5, 20;
+  --scifi-backdrop-rgb: 10, 5, 20;
+}
+
+/* Cyberpunk — Blade Runner rain-slick night: near-black indigo, electric cyan,
+   hot magenta, and acid-green signage. Cyan leads (not pink) so it reads apart
+   from Retrowave and Synthwave '84, and the base is darker than any other dark
+   theme here. */
+:root[data-theme="cyberpunk"],
+[data-theme="cyberpunk"] {
+
+  --scifi-bg: #05060f;
+  --scifi-surface: rgba(var(--scifi-surface-1-rgb), 0.7);
+  --scifi-surface-solid: #101227;
+  --scifi-surface-hover: rgba(26, 28, 58, 0.8);
+  --scifi-surface-glass: linear-gradient(160deg, rgba(var(--scifi-surface-1-rgb), 0.85), rgba(var(--scifi-surface-2-rgb), 0.92));
+  --scifi-primary: #00e5ff;
+  --scifi-secondary: #ff00a0;
+  --scifi-cyan: #a3ff12;
+  --scifi-primary-glow: rgba(var(--scifi-primary-rgb), 0.45);
+  --scifi-cyan-glow: rgba(var(--scifi-cyan-rgb), 0.4);
+  --scifi-secondary-glow: rgba(var(--scifi-secondary-rgb), 0.45);
+  --scifi-text: #dff3ff;
+  --scifi-muted: #6b7a99;
+  --scifi-success: #a3ff12;
+  --scifi-warning: #ffd60a;
+  --scifi-error: #ff2d6f;
+  --scifi-border: rgba(var(--scifi-muted-rgb), 0.35);
+  --scifi-border-accent: rgba(var(--scifi-primary-rgb), 0.45);
+  --scifi-selection: rgba(var(--scifi-primary-rgb), 0.28);
+  /* Hard neon bloom — the most aggressive glow in the set */
+  --scifi-glow: 0 0 24px var(--scifi-primary-glow);
+  --scifi-glow-text: 0 0 12px var(--scifi-primary-glow);
+  /* Rain-soaked skyline: acid green → cyan → magenta → violet → acid green */
+  --scifi-gradient-spectrum: linear-gradient(90deg, #a3ff12 0%, #00e5ff 30%, #ff00a0 55%, #7b2ff7 78%, #a3ff12 100%);
+
+  /* RGB channels for rgba() tints */
+  --scifi-primary-rgb: 0, 229, 255;
+  --scifi-secondary-rgb: 255, 0, 160;
+  --scifi-cyan-rgb: 163, 255, 18;
+  --scifi-muted-rgb: 107, 122, 153;
+  --scifi-error-rgb: 255, 45, 111;
+  --scifi-success-rgb: 163, 255, 18;
+  --scifi-warning-rgb: 255, 214, 10;
+  /* Semantic surface layers (rgb) — near-black indigo, darker than retrowave */
+  --scifi-surface-1-rgb: 16, 18, 39;
+  --scifi-surface-2-rgb: 5, 6, 15;
+  --scifi-bg-deep-rgb: 3, 3, 10;
+  --scifi-active-text: #ffffff;
+  --scifi-shadow-rgb: 0, 0, 8;
+  --scifi-backdrop-rgb: 0, 0, 8;
+}
+
+/* Steampunk — Victorian engine room: oil-dark browns, polished brass, oxidized
+   copper verdigris, and rust. Warm and mechanical; deliberately the least
+   "neon" dark theme, with brass glow standing in for gaslight. */
+:root[data-theme="steampunk"],
+[data-theme="steampunk"] {
+
+  --scifi-bg: #1a1310;
+  --scifi-surface: rgba(var(--scifi-surface-1-rgb), 0.72);
+  --scifi-surface-solid: #2a2018;
+  --scifi-surface-hover: rgba(58, 44, 33, 0.8);
+  --scifi-surface-glass: linear-gradient(160deg, rgba(var(--scifi-surface-1-rgb), 0.85), rgba(var(--scifi-surface-2-rgb), 0.92));
+  --scifi-primary: #c9973f;
+  --scifi-secondary: #4e8c7a;
+  --scifi-cyan: #b8503a;
+  --scifi-primary-glow: rgba(var(--scifi-primary-rgb), 0.22);
+  --scifi-cyan-glow: rgba(var(--scifi-cyan-rgb), 0.18);
+  --scifi-secondary-glow: rgba(var(--scifi-secondary-rgb), 0.16);
+  --scifi-text: #ecdfc9;
+  --scifi-muted: #8d7a60;
+  --scifi-success: #7d9b5a;
+  --scifi-warning: #d9922e;
+  --scifi-error: #b5432f;
+  --scifi-border: rgba(var(--scifi-muted-rgb), 0.38);
+  --scifi-border-accent: rgba(var(--scifi-primary-rgb), 0.45);
+  --scifi-selection: rgba(var(--scifi-primary-rgb), 0.24);
+  /* Warm gaslight bloom, not neon */
+  --scifi-glow: 0 0 18px rgba(var(--scifi-primary-rgb), 0.2);
+  --scifi-glow-text: 0 0 8px rgba(var(--scifi-primary-rgb), 0.14);
+  /* Boiler spectrum: brass → copper → rust → verdigris → brass */
+  --scifi-gradient-spectrum: linear-gradient(90deg, #c9973f 0%, #b8503a 30%, #8a5a2b 52%, #4e8c7a 76%, #c9973f 100%);
+
+  /* RGB channels for rgba() tints */
+  --scifi-primary-rgb: 201, 151, 63;
+  --scifi-secondary-rgb: 78, 140, 122;
+  --scifi-cyan-rgb: 184, 80, 58;
+  --scifi-muted-rgb: 141, 122, 96;
+  --scifi-error-rgb: 181, 67, 47;
+  --scifi-success-rgb: 125, 155, 90;
+  --scifi-warning-rgb: 217, 146, 46;
+  /* Semantic surface layers (rgb) — oiled brown / aged leather */
+  --scifi-surface-1-rgb: 42, 32, 24;
+  --scifi-surface-2-rgb: 26, 19, 16;
+  --scifi-bg-deep-rgb: 18, 13, 11;
+  --scifi-active-text: #fff6e6;
+  --scifi-shadow-rgb: 12, 7, 4;
+  --scifi-backdrop-rgb: 12, 7, 4;
+}
 /* Seed Creative Hub — cultural / editorial: warm sand + gold, soft or no glow */
 :root[data-theme="seed-hub"],
 [data-theme="seed-hub"] {

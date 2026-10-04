@@ -83,7 +83,7 @@ Every color, glow, radius, and surface maps to a `--scifi-*` variable.
 
 **Themes** (set `data-theme` on `<html>`):
 
-`retrowave` · `ghibli` · `fiesta` · `dawn` · `synthwave84` · `solarizedDark` · `cottonCandy` · `goldenTwilight` · `brightContrasts` · `seed-hub`
+`retrowave` · `ghibli` · `vibrantFiesta` · `dawn` · `synthwave84` · `solarizedDark` · `cottonCandy` · `goldenTwilight` · `brightContrasts` · `seed-hub`
 
 **Stack utilities:** `class="btn btn-primary mt-4 opacity-80"`
 

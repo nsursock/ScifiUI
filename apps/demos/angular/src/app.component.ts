@@ -409,7 +409,7 @@ export class AppComponent implements AfterViewInit {
   themes = [
     "retrowave",
     "ghibli",
-    "fiesta",
+    "vibrantFiesta",
     "dawn",
     "synthwave84",
     "solarizedDark",

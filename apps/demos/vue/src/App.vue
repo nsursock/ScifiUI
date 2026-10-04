@@ -17,7 +17,7 @@ import { createToaster, initDropdowns, initTreeView, enterShell } from "@scifiui
 const THEMES = [
   "retrowave",
   "ghibli",
-  "fiesta",
+  "vibrantFiesta",
   "dawn",
   "synthwave84",
   "solarizedDark",
